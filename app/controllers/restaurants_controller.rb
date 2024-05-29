@@ -37,4 +37,13 @@ class RestaurantsController < ApplicationController
     redirect_to restaurants_path, status: :see_other
   end
 
+  private
+
+  def set_restaurant
+    @restaurant = Restaurant.find(params[:id])
+  end
+
+  def restaurant_params
+    params.require.permit(:name, :address)
+  end
 end
