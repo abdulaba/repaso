@@ -14,5 +14,6 @@ Rails.application.routes.draw do
     collection do
       get :top
     end
+    resources :reviews, only: %i[index new create]
   end
 end
